@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Contact on Portfolio website for Jenny Jin</title>
-    <link>/contact/</link>
+    <link>/jennyjin0429-portfolio.netlify.app/contact/</link>
     <description>Recent content in Contact on Portfolio website for Jenny Jin</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/contact/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="/jennyjin0429-portfolio.netlify.app/contact/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,5 +1,5 @@
 # default configuration
-baseURL = "https://jennyjin0429-portfolio.netlify.app/"
+baseURL = "https://jennyjin0429-portfolio.netlify.app"
 languageCode = "en-us"
 summaryLength = "10"
 theme = "kross-hugo"

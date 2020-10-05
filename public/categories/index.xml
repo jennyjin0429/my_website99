@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Portfolio website for Jenny Jin</title>
-    <link>/categories/</link>
+    <link>/jennyjin0429-portfolio.netlify.app/categories/</link>
     <description>Recent content in Categories on Portfolio website for Jenny Jin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 May 2019 12:14:34 +0600</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 May 2019 12:14:34 +0600</lastBuildDate><atom:link href="/jennyjin0429-portfolio.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>branding</title>
-      <link>/categories/branding/</link>
+      <link>/jennyjin0429-portfolio.netlify.app/categories/branding/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
-      <guid>/categories/branding/</guid>
+      <guid>/jennyjin0429-portfolio.netlify.app/categories/branding/</guid>
       <description></description>
     </item>
     
     <item>
       <title>design</title>
-      <link>/categories/design/</link>
+      <link>/jennyjin0429-portfolio.netlify.app/categories/design/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
-      <guid>/categories/design/</guid>
+      <guid>/jennyjin0429-portfolio.netlify.app/categories/design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
-      <link>/categories/development/</link>
+      <link>/jennyjin0429-portfolio.netlify.app/categories/development/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
-      <guid>/categories/development/</guid>
+      <guid>/jennyjin0429-portfolio.netlify.app/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>illustration</title>
-      <link>/categories/illustration/</link>
+      <link>/jennyjin0429-portfolio.netlify.app/categories/illustration/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
-      <guid>/categories/illustration/</guid>
+      <guid>/jennyjin0429-portfolio.netlify.app/categories/illustration/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/categories/r/</link>
+      <link>/jennyjin0429-portfolio.netlify.app/categories/r/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/categories/r/</guid>
+      <guid>/jennyjin0429-portfolio.netlify.app/categories/r/</guid>
       <description></description>
     </item>
     
