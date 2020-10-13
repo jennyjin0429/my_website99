@@ -1,41 +1,41 @@
 # work process
 work_process:
   enable : true
-  title : "Work Process"
+  title : "My Hobbies"
   item:
-  - title : "Research and Plan"
-    icon : "images/icons/plan.png"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  - title : "Playing the piano"
+    icon : "images/icons/piano.png"
+    content : "I have learned to play the piano since age 5. My favorite piece is 'The Maiden's Prayers' by Tekla Bądarzewska-Baranowska."
     
-  - title : "Design and Develop"
-    icon : "images/icons/design.png"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  - title : "Watching Tennis Game"
+    icon : "images/icons/federer.png"
+    content : "Even though I don't know how to play tennis.I love watching Roger Federer playing tennis. He is like the ballet dancer on the court and he is always the legend."
     
-  - title : "Deliver"
-    icon : "images/icons/print.png"
-    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  - title : "Reading Fashion Magazines"
+    icon : "images/icons/magazine.png"
+    content : "I love reading those fashion magazines such as Harper's BAZAAR,so I can grasp the latest fashion trend."
 
 
 # team
 team:
   enable: true
-  title : "My Team"
+  title : "My Pets"
   team_member:
-    - title : "Jack Schenziwe"
-      image : "images/team/member-1.png"
-      designation : "Project Manager"
+    - title : "Aeolus"
+      image : "images/team/aeolus.png"
+      designation : "British Shorthair"
       
-    - title : "Julias Carlie"
-      image : "images/team/member-2.png"
-      designation : "Web Developer"
+    - title : "Zelus"
+      image : "images/team/zelus.png"
+      designation : "British Shorthair"
       
-    - title : "John Doe"
-      image : "images/team/member-3.png"
-      designation : "Designer"
+    - title : "They Being Together"
+      image : "images/team/aeoluszelus.png"
+      designation : "They Being Together"
 
 
 # client logo slider
 clients_logo_slider:
   enable : true
-  title : "My Clients"
+  title : "My Interests"
   # clients logo comes from 'data/homepage.yml' file

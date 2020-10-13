@@ -1,7 +1,7 @@
-# work process
-work_process:
+# My Paintings
+my_paintings:
   enable : true
-  title : "Work Process"
+  title : "My Paintings"
   item:
   - title : "Research and Plan"
     icon : "images/icons/plan.png"
@@ -16,20 +16,20 @@ work_process:
     content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 
-# team
-team:
+# My Pets
+pets:
   enable: true
-  title : "My Team"
+  title : "My Pets"
   team_member:
-    - title : "Jack Schenziwe"
+    - title : "Aeolus"
       image : "images/team/member-1.png"
       designation : "Project Manager"
       
-    - title : "Julias Carlie"
+    - title : "Zelus"
       image : "images/team/member-2.png"
       designation : "Web Developer"
       
-    - title : "John Doe"
+    - title : "Aeolus&Zelus"
       image : "images/team/member-3.png"
       designation : "Designer"
 
