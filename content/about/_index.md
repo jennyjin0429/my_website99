@@ -1,13 +1,9 @@
 ---
-author_image: images/about/author.jpg
+author_image: /Users/Jenny/Desktop/JENNY/jennypainting.png
 author_signature: images/about/signature.png
 description: This is meta description.
 draft: false
 title: About
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-
-Deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia.
+For all my life, I have been enamored with art, and for the rest of my life, I want to learn and have the chance to produce it. Art, however, is not just paintings or sculptures. Art can found under the veil of countless human activities. While visual arts have been the core of my passion since I was three, I have learned, as I have grown, the art of numerical values and patterns. I am fascinated by the way numbers weave together, forming an array of mathematical formulas that make up the tapestry of science. This is why I strive to pursue a career in finance and accounting. 

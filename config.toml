@@ -60,8 +60,8 @@ phone = "+86 18917965032"
 email = "jjin.mfa2021@london.edu"
 address = "Romm 901,No.3,Lane1199,Puming Road"
 # meta description
-author = "Johnathan Smith"
-description = "This is meta description"
+author = "Jenny Jin"
+description = ""
 # google analytics
 google_analytics_id = "" # Your ID
 # copyright
@@ -89,16 +89,12 @@ map_marker = "images/marker.png"
 # social site
 [[params.social]]
 icon = "ti-facebook"
-URL = "#"
+URL = "https://www.facebook.com/jenny.jin.0808"
 
 [[params.social]]
 icon = "ti-instagram"
-URL = "#"
-
-[[params.social]]
-icon = "ti-dribbble"
-URL = "#"
+URL = "https://www.instagram.com/jennye_e/"
 
 [[params.social]]
 icon = "ti-twitter-alt"
-URL = "#"
+URL = "https://twitter.com/13579cc1"
