@@ -1,5 +1,5 @@
 ---
 description: This is meta description.
-draft: false
-title: Blog
+title: " Diary Blog"
+
 ---
