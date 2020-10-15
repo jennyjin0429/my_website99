@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Hello R Markdown</title>
+  <title>My First Data Analytics Workshop</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -103,7 +103,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Hello R Markdown</h1>
+        <h1 class="text-white font-tertiary">My First Data Analytics Workshop</h1>
       </div>
     </div>
   </div>
@@ -123,53 +123,35 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-9 text-center mb-4">
-          <img src="/" alt="Hello R Markdown" class="img-fluid rounded mb-4">
-          <p class="font-secondary">Published on Jul 23, 2015 by <span class="text-primary">Jenny Jin</span></p>
+          <img src="/" alt="My First Data Analytics Workshop" class="img-fluid rounded mb-4">
+          <p class="font-secondary">Published on Sep 23, 2020 by <span class="text-primary">Jenny Jin</span></p>
         </div>
         <div class="col-lg-9">
           <div class="content">
             
 
 
-<div id="r-markdown" class="section level1">
-<h1>R Markdown</h1>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932</code></pre>
-</div>
-<div id="including-plots" class="section level1">
-<h1>Including Plots</h1>
-<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
-<pre class="r"><code>par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
-  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
-  init.angle = -50, border = NA
-)</code></pre>
-<div class="figure"><span id="fig:pie"></span>
-<img src="/blog/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
-<p class="caption">
-Figure 1: A fancy pie chart.
-</p>
-</div>
-</div>
+<p>We got our first assignment on the second day of the class, which makes me feel excited. We need to analyze the dataset and visualize them by using ggplot. During the workshop, our study group managed to finish part of our assignment.</p>
+<p>I first learned how the basic layout of a R Markdown file. We should load the libraries first.</p>
+<p>We should then load or download the dataset.</p>
+<pre class="r"><code>library(fivethirtyeight)
+data(drinks)</code></pre>
+<p>Before the class, I don’t know how to implment themes into the plot. There are actually many types of themes in R such as theme_bw, theme_wsj and theme_economist. They make our plot look way nicer. Another take away from this assignment is how to adjust the axis so the plot will look more clear to the audience. For example, for the bar graphs, we need to think carefully about which variables should go on the y-axis. The last takeaway is we should reorder the data on the y-axis to make the plot look nicer. I will use this plot as an example.</p>
+<pre class="r"><code>top_25_beer_servings &lt;- drinks %&gt;% 
+  arrange(desc(beer_servings)) %&gt;% 
+  slice(1:25)
+
+ggplot(top_25_beer_servings, 
+       aes(x = beer_servings, 
+           y = reorder(country,beer_servings)))+
+  geom_bar(stat=&quot;identity&quot;)+
+  labs(title = &quot;Which country drinks the most beer?&quot;, 
+       subtitle = &quot;Top 25 beer consuming countries&quot;,
+       caption=&quot;fivethirtyeight&quot;, x=&quot;Beer Servings&quot;,y=&quot;Country&quot;)+
+  theme_economist()+
+  NULL</code></pre>
+<p><img src="/blog/2015-07-23-r-rmarkdown_files/figure-html/beer_plot-1.png" width="648" style="display: block; margin: auto;" />
+If you look at this chart, it will be less appealing if you put the country on x-axis as there will be too many countries crowded on the x-axis.</p>
 
           </div>
         </div>

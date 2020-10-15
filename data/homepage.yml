@@ -158,5 +158,5 @@ portfolio:
 # blog
 blog:
   enable : true
-  title : "Blogs"
+  title : "Diary Blogs"
   # blog post comes from "content/blog" folder

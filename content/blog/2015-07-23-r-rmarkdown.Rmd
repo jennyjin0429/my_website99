@@ -1,37 +1,71 @@
 ---
-title: "Hello R Markdown"
-author: "Frida Gomam"
-date: 2015-07-23T21:13:14-05:00
+title: "My First Data Analytics Workshop"
+author: "Jenny Jin"
+date: "2020-09-23"
 categories: ["R"]
 tags: ["R Markdown", "plot", "regression"]
+image: !["image"](/Users/Jenny/Desktop/JENNY/School\ Related/LBS/CA09\ Data\ Analytics/Homeworks/Individual\ Assignment/Individual\ Assignment/content/blog/r.png)
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
-```
+```{r, setup, echo=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+options(digits = 3)
 
-# R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-fit <- lm(dist ~ speed, data = cars)
-fit
-```
-
-# Including Plots
-
-You can also embed plots. See Figure \@ref(fig:pie) for example:
-
-```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
-par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),
-  col = c('#0292D8', '#F7EA39', '#C4B632'),
-  init.angle = -50, border = NA
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = "center"
 )
 ```
+
+We got our first assignment on the second day of the class, which makes me feel excited. We need to analyze the dataset and visualize them by using ggplot. During the workshop, our study group managed to finish part of our assignment.
+
+I first learned how the basic layout of a R Markdown file. We should load the libraries first.
+
+
+```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(lubridate)
+library(fivethirtyeight)
+library(here)
+library(skimr)
+library(janitor)
+library(vroom)
+library(tidyquant)
+library(rvest)    # scrape websites
+library(purrr)  
+library(lubridate) #to handle dates
+```
+
+We should then load or download the dataset.
+
+```{r, load_alcohol_data}
+library(fivethirtyeight)
+data(drinks)
+```
+
+Before the class, I don't know how to implment themes into the plot. There are actually many types of themes in R such as theme_bw, theme_wsj and theme_economist. They make our plot look way nicer. Another take away from this assignment is how to adjust the axis so the plot will look more clear to the audience. For example, for the bar graphs, we need to think carefully about which variables should go on the y-axis. The last takeaway is we should reorder the data on the y-axis to make the plot look nicer. I will use this plot as an example. 
+
+```{r beer_plot}
+top_25_beer_servings <- drinks %>% 
+  arrange(desc(beer_servings)) %>% 
+  slice(1:25)
+
+ggplot(top_25_beer_servings, 
+       aes(x = beer_servings, 
+           y = reorder(country,beer_servings)))+
+  geom_bar(stat="identity")+
+  labs(title = "Which country drinks the most beer?", 
+       subtitle = "Top 25 beer consuming countries",
+       caption="fivethirtyeight", x="Beer Servings",y="Country")+
+  theme_economist()+
+  NULL
+```
+If you look at this chart, it will be less appealing if you put the country on x-axis as there will be too many countries crowded on the x-axis. 

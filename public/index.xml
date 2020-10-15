@@ -6,23 +6,32 @@
     <description>Recent content on Portfolio website for Jenny Jin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 May 2019 12:14:34 +0600</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Amazon increase income 1.5 Million</title>
-      <link>/blog/post-1/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
+      <title>My First Data Analytics Workshop</title>
+      <link>/blog/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blog/post-1/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+      <guid>/blog/2015-07-23-r-rmarkdown/</guid>
+      <description>We got our first assignment on the second day of the class, which makes me feel excited.</description>
     </item>
     
     <item>
-      <title>Amazon increase income 1.5 Million</title>
+      <title>Become Mater of Your Time—Reflection on Time Management Workshop</title>
       <link>/blog/post-2/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
+      <pubDate>Mon, 14 Sep 2020 12:14:34 +0600</pubDate>
       
       <guid>/blog/post-2/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+      <description>Problem 1: Barely Say No to Others’ Request What I have done poorly in the Past: The biggest problem for me is I don’t say no when others come to me and ask me for help.</description>
+    </item>
+    
+    <item>
+      <title>Learning Tidyverse and Creating my First RMarkdown</title>
+      <link>/blog/post-1/</link>
+      <pubDate>Mon, 07 Sep 2020 12:14:34 +0600</pubDate>
+      
+      <guid>/blog/post-1/</guid>
+      <description>Througout July and August, MFA students have to learn many pre-programme courses.</description>
     </item>
     
     <item>
@@ -140,15 +149,6 @@
       
       <guid>/portfolio/project-9/</guid>
       <description>Project Requirements Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/blog/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/blog/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents.</description>
     </item>
     
   </channel>

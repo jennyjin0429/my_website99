@@ -1,46 +1,31 @@
 ---
-date: "2019-05-12T12:14:34+06:00"
+date: "2020-09-14T12:14:34+06:00"
 description: This is meta description.
 draft: false
-image: images/blog/post-2.jpg
-title: Amazon increase income 1.5 Million
+image: images/blog/222.png
+title: Become Mater of Your Time—Reflection on Time Management Workshop
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
+**Problem 1: Barely Say No to Others’ Request**
+What I have done poorly in the Past:
+The biggest problem for me is I don’t say no when others come to me and ask me for help. That not only happens when I face my employers but also happens when I deal with my friends and classmates. 
+When Alex depicted the story of one of his students in his internship, I was surprised since my story is so similar to his. When I interned at Morgan Stanly Huaxin Securities, there were two VPs in my department: one in Shanghai working together with the team and on in Beijing working remotely. One day, Jayden, the VP in Shanghai, asked me to help him compare and cast the numbers on the consolidated financial statements on the prospectus draft the project team has done and told me that I had to finish it by the afternoon. As I started the work, the phone bell rang, and it was the VP from Beijing. She asked me whether I have time to help her on sorting and checking the working-series file now and she said it would only take about half an hour. I hesitated, thought for a while and still accepted her request as I thought it might offend her or disappoint her if I say no. At the same time, I was confident that I could still finish Jayden’s task within the timeframe. However, the sorting task was more than I expected, and it took me about more than one hour to finish. When Jayden came to me and asked me my progress, I was so embarrassed that I had barely started my work. In fact, if I could have told the VP in Beijing that I had urgent tasks to do, she could do the sorting work on her own. 
+In my daily life, helping friends or classmates wasted a huge chunk of my leisure time because I also don’t know how to say no to them. For instance, last winter, I finally got through the exam period and wanted to take a good break, my mother asked me whether could help her colleague’s daughter on her applications to universities. I was afraid that my mom would be unhappy if I refused her and thus, I said yes. The result was the process of help her refine and polish her applications took almost half of my winter break. 
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.
+How I could Improve in the Future:
+1)    To confront those who are not close -- practice to say no with short and sweet response
+If there is someone who is not close to me and asks me whether I have time to help them do something or asks me whether I can hang out with them for food, I can give them a short but sweet response. By saying no to them, instead of granting my time to others, I will have more precious time studying, applying to jobs or staying in the couch and taking a break. 
+2)    To confront those who are close – Explain the situation to them
+If there is the situation like the case of my mom or those who are close to, I can directly tell her my authentic thought. In the above case, for example, I can tell her that I am tired and maybe I can help her colleague’s daughter to find some helpful online resources so she can work on her own. For those who are really close to you, they will understand your thoughts or difficulties.
+3)    To confront seniors or managers
+In the work environment, if I receive the work from different seniors or managers simultaneously, I can explain the issue to the senior and let him or her to speak to with the other senior who gave me the work and let themselves discuss whose task should prioritize. Some classmates raised the concern that in oriental culture, doing this might show disrespect to the managers. I somewhat agree but based on my internship experiences in Chinese work environment, most managers I met are always able to understand each other’s schedule and difficulties. 
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-labore et dolore magnam aliquam quaerat voluptatem.
+**Problem 2: Enjoy Multi-tasking**
+What I have done poorly in the Past:
+I enjoy time being compressed and I could work my maximum efficient level. In the morning, I don’t want to get up too early as I want to get more sleep. But at the same time, I have a lot of tasks to complete before school. Therefore, I have designed the order of completion in the most time-efficient way. For example, I will first boil water for my dumplings and at the same time I will go to get some kibbles for my cat. In just one hour, I can complete more than 10 tasks including cook breakfast for myself, prepare food for my cat, clean my cat’s toilet. 
+This habit extends to my work habit. During my last internship, I made a huge mistake because of multi-tasking. I wrote the meeting minute for one project while I drafted the email which would be sent to all the executive committee for voting whether another project should be passed or not. Because of multi-tasking, I accidentally put the name of the project on the meeting minute on the voting email. That was very embarrassing since the email is irreversible. I didn’t save any time because of multi-tasking. Instead, it took me more time to draft another email to correct my mistake. 
+How I could Improve in the Future:
+One key takeaway after Alex demonstrates us how to efficiently reply to the email is “batch processing”. In the future, I will first avoid checking the mailbox constantly so that I will not reply to email one by one. Then, I will set aside some time just for processing the email after completing other tasks. By doing that, there will be lower chances that I will make mistakes in drafting the email since now I can fully concentrate on writing the email. 
+In addition, I will categorize my emails. For those that are not urgent, I will discipline myself to resist reply these emails instantaneously. For those important from seniors or higher management level, I will set notifications so that important messages will not be missed. 
 
-> Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-labore et dolore magnam aliquam quaerat voluptatem.
+Conclusion: I genuinely believe the workshop is very helpful for my future career life. Before the workshop, I felt good at multi-tasking is a good thing as it helps me save a lot of time and allows me to work very efficiently. After the workshop, I realize the drawbacks of multi-tasking and will try to get rid of the addiction of multi-tasking. 
