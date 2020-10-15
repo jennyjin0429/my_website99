@@ -1,30 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Portfolio on Portfolio website for Jenny Jin</title>
+    <title>Data Analytics Portfolio on Portfolio website for Jenny Jin</title>
     <link>/portfolio/</link>
-    <description>Recent content in Portfolio on Portfolio website for Jenny Jin</description>
+    <description>Recent content in Data Analytics Portfolio on Portfolio website for Jenny Jin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 12 May 2019 12:14:34 +0600</lastBuildDate><atom:link href="/portfolio/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Artwork Design</title>
-      <link>/portfolio/project-1/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
-      
-      <guid>/portfolio/project-1/</guid>
-      <description>Project Requirements Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Artwork Design</title>
-      <link>/portfolio/project-2/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
-      
-      <guid>/portfolio/project-2/</guid>
-      <description>Project Requirements Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
     <item>
       <title>Artwork Design</title>
       <link>/portfolio/project-3/</link>
@@ -36,28 +18,10 @@
     
     <item>
       <title>Artwork Design</title>
-      <link>/portfolio/project-4/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
-      
-      <guid>/portfolio/project-4/</guid>
-      <description>Project Requirements Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Artwork Design</title>
       <link>/portfolio/project-5/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
       <guid>/portfolio/project-5/</guid>
-      <description>Project Requirements Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Artwork Design</title>
-      <link>/portfolio/project-6/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
-      
-      <guid>/portfolio/project-6/</guid>
       <description>Project Requirements Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
     </item>
     

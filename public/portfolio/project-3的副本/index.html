@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>My first Data Analytics Workshop</title>
+  <title>Artwork Design</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="">
+  <meta name="description" content="This is meta description.">
   <meta name="author" content="Jenny Jin">
   <meta name="generator" content="Hugo 0.75.1" />
 
@@ -85,17 +85,25 @@
         </li>
         
         
+        
+        
+        
+        <li class="nav-item ">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+        
+        
       </ul>
     </div>
   </nav>
 </header>
 
-  
+
 <section class="page-title bg-primary position-relative overflow-hidden">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">My first Data Analytics Workshop</h1>
+        <h1 class="text-white font-tertiary">Artwork Design</h1>
       </div>
     </div>
   </div>
@@ -111,41 +119,79 @@
 
 
 
-  <section class="section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-9 text-center mb-4">
-          <img src="/Users/Jenny/Desktop/JENNY/School%5C%20Related/LBS/CA09%5C%20Data%5C%20Analytics/Homeworks/Individual%5C%20Assignment/Individual%5C%20Assignment/static/images/blog/r.png" alt="My first Data Analytics Workshop" class="img-fluid rounded mb-4">
-          <p class="font-secondary">Published on Sep 23, 2015 by <span class="text-primary">Jenny Jin</span></p>
-        </div>
-        <div class="col-lg-9">
-          <div class="content">
-            <p>We got our first assignment on the second day of the class, which makes me feel excited. We need to analyze the dataset and visualize them by using ggplot. During the workshop, our study group managed to finish part of our assignment.</p>
-<p>I first learned how the basic layout of a R Markdown file. We should load the libraries first.</p>
-<p>We should then load or download the dataset.</p>
-<pre class="r"><code>library(fivethirtyeight)
-data(drinks)</code></pre>
-<p>Before the class, I don’t know how to implment themes into the plot. There are actually many types of themes in R such as theme_bw, theme_wsj and theme_economist. They make our plot look way nicer. Another take away from this assignment is how to adjust the axis so the plot will look more clear to the audience. For example, for the bar graphs, we need to think carefully about which variables should go on the y-axis. The last takeaway is we should reorder the data on the y-axis to make the plot look nicer. I will use this plot as an example.</p>
-<pre class="r"><code>top_25_beer_servings &lt;- drinks %&gt;% 
-  arrange(desc(beer_servings)) %&gt;% 
-  slice(1:25)
 
-ggplot(top_25_beer_servings, 
-       aes(x = beer_servings, 
-           y = reorder(country,beer_servings)))+
-  geom_bar(stat=&quot;identity&quot;)+
-  labs(title = &quot;Which country drinks the most beer?&quot;, 
-       subtitle = &quot;Top 25 beer consuming countries&quot;,
-       caption=&quot;fivethirtyeight&quot;, x=&quot;Beer Servings&quot;,y=&quot;Country&quot;)+
-  theme_economist()+
-  NULL</code></pre>
-<p><img src="/blog/2015-07-23-r-rmarkdown_files/figure-html/beer_plot-1.png" width="648" style="display: block; margin: auto;" />
-If you look at this chart, it will be less appealing if you put the country on x-axis as there will be too many countries crowded on the x-axis.</p>
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 mb-5">
+        <img src="/images/portfolio/item-3.png" class="img-fluid w-100" alt="Artwork Design">
+      </div>
+      <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
+        <div class="row mx-0">
+          <div class="col-sm-6 mb-5">
+            <div class="project-meta">
+              <i class="ti-calendar"></i>
+              <div class="ml-3">
+                <h4>Date</h4>
+                <p>May 12, 2019</p>
+              </div>
+            </div>
           </div>
+          
+          <div class="col-sm-6 mb-5">
+            <div class="project-meta">
+              <i class="ti-user"></i>
+              <div class="ml-3">
+                <h4>Client</h4>
+                <p>John Doe</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-6 mb-5">
+            <div class="project-meta">
+              <i class="ti-folder"></i>
+              <div class="ml-3">
+                <h4>Categories</h4>
+                <p>Illustration</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-6 mb-5">
+            <div class="project-meta">
+              <i class="ti-link"></i>
+              <div class="ml-3">
+                <h4>Project Link</h4>
+                <p><a href="https://themefisher.com/">https://themefisher.com/</a></p>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
+      <div class="col-lg-11">
+        <div class="content"><h4 id="project-requirements">Project Requirements</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.</p>
+<h4 id="project-details">Project Details</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.</p>
+</div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
 
 
