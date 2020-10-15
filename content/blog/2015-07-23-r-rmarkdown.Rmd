@@ -1,10 +1,9 @@
 ---
-title: "My First Data Analytics Workshop"
+title: "My first Data Analytics Workshop"
 author: "Jenny Jin"
-date: "2020-09-23"
+date: 2015-09-23T21:13:14-05:00
 categories: ["R"]
 tags: ["R Markdown", "plot", "regression"]
-image: !["image"](/Users/Jenny/Desktop/JENNY/School\ Related/LBS/CA09\ Data\ Analytics/Homeworks/Individual\ Assignment/Individual\ Assignment/content/blog/r.png)
 ---
 
 ```{r, setup, echo=FALSE}

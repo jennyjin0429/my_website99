@@ -6,14 +6,14 @@
     <description>Recent content on Portfolio website for Jenny Jin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Sep 2020 12:14:34 +0600</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Data Analytics Workshop</title>
-      <link>/blog/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Wed, 23 Sep 2020 00:00:00 +0000</pubDate>
+      <title>Investment Fundamentals Project--Kelly Criterion</title>
+      <link>/blog/post-3/</link>
+      <pubDate>Mon, 28 Sep 2020 12:14:34 +0600</pubDate>
       
-      <guid>/blog/2015-07-23-r-rmarkdown/</guid>
-      <description>We got our first assignment on the second day of the class, which makes me feel excited.</description>
+      <guid>/blog/post-3/</guid>
+      <description>Our group had a meeting today about what we want to do for the investment fundamentals project, which requires us to come up with our own investment strategy.</description>
     </item>
     
     <item>
@@ -36,20 +36,11 @@
     
     <item>
       <title>Amazon increase income 1.5 Million</title>
-      <link>/blog/post-3/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
-      
-      <guid>/blog/post-3/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
-    </item>
-    
-    <item>
-      <title>Amazon increase income 1.5 Million</title>
       <link>/blog/post-4/</link>
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
       <guid>/blog/post-4/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+      <description>xxx</description>
     </item>
     
     <item>
@@ -149,6 +140,15 @@
       
       <guid>/portfolio/project-9/</guid>
       <description>Project Requirements Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</description>
+    </item>
+    
+    <item>
+      <title>My first Data Analytics Workshop</title>
+      <link>/blog/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Wed, 23 Sep 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/blog/2015-07-23-r-rmarkdown/</guid>
+      <description>We got our first assignment on the second day of the class, which makes me feel excited.</description>
     </item>
     
   </channel>
