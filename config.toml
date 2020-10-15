@@ -1,20 +1,46 @@
-# default configuration
 baseURL = "https://jennyjin0429-portfolio.netlify.app"
 languageCode = "en-us"
 summaryLength = "10"
 theme = "kross-hugo"
 title = "Portfolio website for Jenny Jin"
-
-# css plugins
+[[menu.main]]
+URL = "portfolio"
+name = "Portfolio"
+weight = 3
+[[menu.main]]
+URL = "blog"
+name = "Blog"
+weight = 2
+[[menu.main]]
+URL = "about"
+name = "About"
+weight = 1
+[params]
+address = "Romm 901,No.3,Lane1199,Puming Road"
+author = "Jenny Jin"
+copyright = "Copyright &copy; 2020 a theme by [gethugothemes](https://gethugothemes.com)"
+description = ""
+email = "jjin.mfa2021@london.edu"
+google_analytics_id = ""
+home = "Home"
+logo = ""
+phone = "+86 18917965032"
+theme_color = "#41228e"
+[params.contact]
+enable = true
+form_action = "#"
+[params.map]
+enable = true
+gmap_api = "https://www.google.com/maps/place/%E4%B8%AD%E5%9B%BD%E4%B8%8A%E6%B5%B7%E5%B8%82%E6%B5%A6%E4%B8%9C%E6%96%B0%E5%8C%BA%E9%99%86%E5%AE%B6%E5%98%B4%E9%87%91%E8%9E%8D%E8%B4%B8%E6%98%93%E5%8C%BA%E4%B9%9D%E9%BE%99%E4%BB%93/@31.21396,121.5138019,838m/data=!3m2!1e3!4b1!4m13!1m7!3m6!1s0x35b27094bfff0ea5:0xe31658a02badb0f3!2z5Lit5Zu95LiK5rW35biC5rWm5Lic5paw5Yy66ZmG5a625Zi06YeR6J6N6LS45piT5Yy65rWm5piO6Lev!3b1!8m2!3d31.2178917!4d121.51389!3m4!1s0x35b270bdb940acb3:0x83217719565d04e6!8m2!3d31.2139554!4d121.5159906"
+map_latitude = "31.213882"
+map_longitude = "121.516130"
+map_marker = "images/marker.png"
 [[params.plugins.css]]
 link = "plugins/bootstrap/bootstrap.min.css"
 [[params.plugins.css]]
 link = "plugins/slick/slick.css"
 [[params.plugins.css]]
 link = "plugins/themify-icons/themify-icons.css"
-
-
-# js plugin
 [[params.plugins.js]]
 link = "plugins/jQuery/jquery.min.js"
 [[params.plugins.js]]
@@ -25,76 +51,15 @@ link = "plugins/slick/slick.min.js"
 link = "plugins/shuffle/shuffle.min.js"
 [[params.plugins.js]]
 link = "plugins/google-map/map.js"
-
-
-# menu
-[[menu.main]]
-URL = "about"
-name = "About"
-weight = 1
-
-[[menu.main]]
-URL = "blog"
-name = "Blog"
-weight = 2
-
-[[menu.main]]
-URL = "portfolio"
-name = "Portfolio"
-weight = 3
-
-[[menu.main]]
-URL = "contact"
-name = "Contact"
-weight = 4
-
-
-# default parameters
-[params]
-home = "Home"
-logo = ""
-# theme color
-theme_color = "#41228e"
-# contact info
-phone = "+86 18917965032"
-email = "jjin.mfa2021@london.edu"
-address = "Romm 901,No.3,Lane1199,Puming Road"
-# meta description
-author = "Jenny Jin"
-description = ""
-# google analytics
-google_analytics_id = "" # Your ID
-# copyright
-copyright = "Copyright &copy; 2020 a theme by [gethugothemes](https://gethugothemes.com)"
-
-
-# preloader
 [params.preloader]
 enable = true
-preloader = "images/preloader.gif" # use png, jpg, svg or gif format
-
-# contact
-[params.contact]
-enable = true
-form_action = "#" # contact form works with : https://formspree.io
-
-# google map
-[params.map]
-enable = true
-gmap_api = "https://www.google.com/maps/place/%E4%B8%AD%E5%9B%BD%E4%B8%8A%E6%B5%B7%E5%B8%82%E6%B5%A6%E4%B8%9C%E6%96%B0%E5%8C%BA%E9%99%86%E5%AE%B6%E5%98%B4%E9%87%91%E8%9E%8D%E8%B4%B8%E6%98%93%E5%8C%BA%E4%B9%9D%E9%BE%99%E4%BB%93/@31.21396,121.5138019,838m/data=!3m2!1e3!4b1!4m13!1m7!3m6!1s0x35b27094bfff0ea5:0xe31658a02badb0f3!2z5Lit5Zu95LiK5rW35biC5rWm5Lic5paw5Yy66ZmG5a625Zi06YeR6J6N6LS45piT5Yy65rWm5piO6Lev!3b1!8m2!3d31.2178917!4d121.51389!3m4!1s0x35b270bdb940acb3:0x83217719565d04e6!8m2!3d31.2139554!4d121.5159906"
-map_latitude = "31.213882"
-map_longitude = "121.516130"
-map_marker = "images/marker.png"
-
-# social site
+preloader = "images/preloader.gif"
 [[params.social]]
-icon = "ti-facebook"
 URL = "https://www.facebook.com/jenny.jin.0808"
-
+icon = "ti-facebook"
 [[params.social]]
-icon = "ti-instagram"
 URL = "https://www.instagram.com/jennye_e/"
-
+icon = "ti-instagram"
 [[params.social]]
-icon = "ti-twitter-alt"
 URL = "https://twitter.com/13579cc1"
+icon = "ti-twitter-alt"
