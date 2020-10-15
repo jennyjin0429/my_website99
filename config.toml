@@ -5,15 +5,15 @@ theme = "kross-hugo"
 title = "Portfolio website for Jenny Jin"
 [[menu.main]]
 URL = "portfolio"
-name = "Portfolio"
+name = "Data Analytics Portfolio"
 weight = 3
 [[menu.main]]
 URL = "blog"
-name = "Blog"
+name = "Diary Blog"
 weight = 2
 [[menu.main]]
 URL = "about"
-name = "About"
+name = "About  Jenny"
 weight = 1
 [params]
 address = "Romm 901,No.3,Lane1199,Puming Road"
