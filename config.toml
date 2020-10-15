@@ -13,7 +13,7 @@ name = "Diary Blog"
 weight = 2
 [[menu.main]]
 URL = "about"
-name = "About"
+name = "About  Jenny"
 weight = 1
 [params]
 address = "Romm 901,No.3,Lane1199,Puming Road"
