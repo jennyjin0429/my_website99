@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Portfolio website for Jenny Jin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 May 2019 12:14:34 +0600</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Oct 2020 12:14:34 +0600</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>illustration</title>
+      <link>/categories/illustration/</link>
+      <pubDate>Wed, 07 Oct 2020 12:14:34 +0600</pubDate>
+      
+      <guid>/categories/illustration/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>branding</title>
       <link>/categories/branding/</link>
@@ -22,15 +31,6 @@
       <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
       
       <guid>/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>illustration</title>
-      <link>/categories/illustration/</link>
-      <pubDate>Sun, 12 May 2019 12:14:34 +0600</pubDate>
-      
-      <guid>/categories/illustration/</guid>
       <description></description>
     </item>
     
