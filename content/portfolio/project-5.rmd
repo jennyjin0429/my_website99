@@ -89,8 +89,8 @@ ggplot(by_region,
         x="Happiness_score",y="Region") +
   theme_economist()
 ```
->We found Australia and New Zealand region has the highest average happiness_score. Comapring to North Americans, Eastern Asian tends to have lower happpiness_score. 
 
+>We found Australia and New Zealand region has the highest average happiness_score. Comapring to North Americans, Eastern Asian tends to have lower happpiness_score. 
 According to William Tov's research, the reason why East Asians tend to have lower levels of well-being is because of culture difference. He argues that "culture influences how we seek happiness and regulate our emotions: European Americans typically want to feel peppy emotions like excitement and cheerfulness, while Hong Kong Chinese prefer calmer states like peace and serenity. Even the factors that promote happiness may be different, as self-esteem is more important to our feelings of life satisfaction in the West than in East Asia. "
 
 #### Are people from the same region (Eastern Asia) also feel unhappy?
