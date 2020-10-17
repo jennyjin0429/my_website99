@@ -1,32 +1,140 @@
 ---
 categories:
 - illustration
-- development
-client: John Doe
-date: "2019-05-12T12:14:34+06:00"
+author: Jenny Jin
+date: "2020-10-14T12:14:34+06:00"
 description: This is meta description.
 draft: false
 image: images/portfolio/item-8.png
-project_url: https://themefisher.com/
-title: Artwork Design
+project_url: https://jennyjin0429-portfolio.netlify.app/portfolio/project-5/
+title: Eastern Asian countries tend to have lower happiness score
 ---
+### Project Detail
+Although people are rich of resources today and most of us don't have to worry about food and clothing. But there are a lot of people feeling unhappy. I notice this happens especially in China. Many people around me seems depressed. This dataset is provided by professor Kostis in section 7. When I took a glimpse onto the data, I was not surprised to find that China ranked the 84th place. Therefore, I decided to look further into the data to see how China ranks compared to other developing country. 
 
-#### Project Requirements
+```{r, setup}
+knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size="medium")   # slightly smaller font for code
+options(digits = 3)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=9.75, 
+  fig.height=6.75,
+  fig.align = "center"
+)
+```
 
+#### Load Libraries
+```{r}
+library(tidyverse)
+library(broom)
+library(GGally)
+library(here)
+library(janitor)
+library(huxtable)
+library(ggthemes)
+library(skimr)
+```
 
-#### Project Details
+#### Import Dataset
+```{r}
+world_happiness_15 <- read_csv(here("mydata", "world_happiness_2015.csv")) %>% 
+  janitor::clean_names()
+```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.
+#### Inspect Dataset
+```{r}
+glimpse(world_happiness_15)
+#Look at China's ranking
+world_happiness_15 %>% filter (country=="China")
+```
+>We can see China ranks at approximately the middle among 158 countries even though it is the second largest economy in the world. So what variable decides happiness? Let's do a correlation matrix next.
+
+#### produce scatterplot-correlation matrix using GGally::ggpairs()
+```{r}
+world_happiness_15 %>% 
+  select(-c(country, region, happiness_rank, standard_error)) %>% 
+  ggpairs()
+```
+Based on the correlation matrix, I found that happiness score is highly correlated with family, life expenctancy and gdp_per_capita. 
+
+#### produce sumamry statistics for happiness score
+```{r}
+world_happiness_15 %>% 
+  select(happiness_score) %>% 
+  skim()
+```
+
+#### Which region has the lowest happiness score?
+```{r}
+by_region <- world_happiness_15 %>% 
+# Group the observations by region 
+  group_by(region) %>% 
+# Calculate the average within the group 
+  summarise(avg_happiness_score=mean(happiness_score))%>%
+# Arrange the average in descending order
+  arrange(desc(avg_happiness_score))
+```
+#### Plot the average happiness score by region
+```{r}
+ggplot(by_region, 
+       aes(x = avg_happiness_score, 
+           y = reorder(region,avg_happiness_score)),fill=region)+
+  geom_bar(stat="identity")+
+  labs(title = "Which region has the highest happiness score?", 
+        x="Happiness_score",y="Region") +
+  theme_economist()
+```
+>We found Australia and New Zealand region has the highest average happiness_score. Comapring to North Americans, Eastern Asian tends to have lower happpiness_score. 
+
+According to William Tov's research, the reason why East Asians tend to have lower levels of well-being is because of culture difference. He argues that "culture influences how we seek happiness and regulate our emotions: European Americans typically want to feel peppy emotions like excitement and cheerfulness, while Hong Kong Chinese prefer calmer states like peace and serenity. Even the factors that promote happiness may be different, as self-esteem is more important to our feelings of life satisfaction in the West than in East Asia. "
+
+#### Are people from the same region (Eastern Asia) also feel unhappy?
+Create a Graph Comparing Different Countries in East Asia Region
+```{r}
+world_happiness_east_asia <- world_happiness_15 %>%
+
+  #filter the dataset  
+  filter (region=="Eastern Asia")
+ 
+  #plot the data
+  ggplot(world_happiness_east_asia, 
+       aes(x = happiness_score, 
+           y = reorder(country,happiness_score)))+
+  geom_bar(stat="identity")+
+  labs(title = "Taiwan has the highest happiness score.", 
+        x="Happiness_score",y="Country") +
+  theme_economist()
+  
+  
+```
+From the list, we can see that smaller countries like Taiwan, Japan and Korea tend to have higher happiness score. According to a new analysis published by the Global Wellness, smaller countries tend to feel happier because they have a healthier lifestyle and live longer. For those countries who are large and rapidly developing, their citizens tend to experience high rate of depression, alcohol misuse and other health issues. 
+#### Lets see the relationship between happiness score and life expectancy.
+```{r}
+model1 <- lm(happiness_score ~ 1, data = world_happiness_15)
+model2 <- lm(happiness_score ~ health_life_expectancy, data = world_happiness_15)
+# get model summary
+model2 %>% broom::tidy(conf.int = TRUE)
+model2 %>% broom::glance()
+```
+We can find a high t stat and the confidence interval doesn't include zero. Therefore, we can conclude that life expectancy is a variable highly correlated with happiness.
+
+```{r}
+ggplot(world_happiness_15,
+       aes(x=health_life_expectancy,y=happiness_score,color=region,size=economy_gdp_per_capita)) +
+  geom_point()+
+# add best fit line
+  geom_smooth(color="black")
+# add labels 
+  labs(title = "Taiwan has the highest happiness score.", 
+        x="Life Expectancy",y="Happiness Score") +
+  theme_economist()
+```
+### Reference
+<1> https://greatergood.berkeley.edu/article/item/how_cultural_differences_shape_your_happiness
+
+<2> https://www.hindustantimes.com/business-news/smaller-countries-are-becoming-the-healthiest-in-global-surveys/story-yFysjpsKN7DMzc1cETpldO.html

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Artwork Design</title>
+  <title>Eastern Asian countries tend to have lower happiness score</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -95,7 +95,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h1 class="text-white font-tertiary">Artwork Design</h1>
+        <h1 class="text-white font-tertiary">Eastern Asian countries tend to have lower happiness score</h1>
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-5 mb-5">
-        <img src="/images/portfolio/item-8.png" class="img-fluid w-100" alt="Artwork Design">
+        <img src="/images/portfolio/item-8.png" class="img-fluid w-100" alt="Eastern Asian countries tend to have lower happiness score">
       </div>
       <div class="col-lg-7 mb-5 mb-lg-0 align-self-center">
         <div class="row mx-0">
@@ -125,17 +125,7 @@
               <i class="ti-calendar"></i>
               <div class="ml-3">
                 <h4>Date</h4>
-                <p>May 12, 2019</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-sm-6 mb-5">
-            <div class="project-meta">
-              <i class="ti-user"></i>
-              <div class="ml-3">
-                <h4>Client</h4>
-                <p>John Doe</p>
+                <p>Oct 14, 2020</p>
               </div>
             </div>
           </div>
@@ -145,7 +135,7 @@
               <i class="ti-folder"></i>
               <div class="ml-3">
                 <h4>Categories</h4>
-                <p>Illustration, development</p>
+                <p>Illustration</p>
               </div>
             </div>
           </div>
@@ -155,7 +145,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://themefisher.com/">https://themefisher.com/</a></p>
+                <p><a href="https://jennyjin0429-portfolio.netlify.app/portfolio/project-5/">https://jennyjin0429-portfolio.netlify.app/portfolio/project-5/</a></p>
               </div>
             </div>
           </div>
@@ -166,24 +156,231 @@
         <div class="content">
 
 
-<div id="project-requirements" class="section level4">
-<h4>Project Requirements</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.</p>
+<div id="project-detail" class="section level3">
+<h3>Project Detail</h3>
+<p>Although people are rich of resources today and most of us don’t have to worry about food and clothing. But there are a lot of people feeling unhappy. I notice this happens especially in China. Many people around me seems depressed. This dataset is provided by professor Kostis in section 7. When I took a glimpse onto the data, I was not surprised to find that China ranked the 84th place. Therefore, I decided to look further into the data to see how China ranks compared to other developing country.</p>
+<pre class="r"><code>knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size=&quot;medium&quot;)   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=9.75, 
+  fig.height=6.75,
+  fig.align = &quot;center&quot;
+)</code></pre>
+<div id="load-libraries" class="section level4">
+<h4>Load Libraries</h4>
+<pre class="r"><code>library(tidyverse)
+library(broom)
+library(GGally)
+library(here)
+library(janitor)
+library(huxtable)
+library(ggthemes)
+library(skimr)</code></pre>
 </div>
-<div id="project-details" class="section level4">
-<h4>Project Details</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est.</p>
+<div id="import-dataset" class="section level4">
+<h4>Import Dataset</h4>
+<pre class="r"><code>world_happiness_15 &lt;- read_csv(here(&quot;mydata&quot;, &quot;world_happiness_2015.csv&quot;)) %&gt;% 
+  janitor::clean_names()</code></pre>
+</div>
+<div id="inspect-dataset" class="section level4">
+<h4>Inspect Dataset</h4>
+<pre class="r"><code>glimpse(world_happiness_15)</code></pre>
+<pre><code>## Rows: 158
+## Columns: 12
+## $ country                     &lt;chr&gt; &quot;Switzerland&quot;, &quot;Iceland&quot;, &quot;Denmark&quot;, &quot;Nor…
+## $ region                      &lt;chr&gt; &quot;Western Europe&quot;, &quot;Western Europe&quot;, &quot;West…
+## $ happiness_rank              &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13…
+## $ happiness_score             &lt;dbl&gt; 7.59, 7.56, 7.53, 7.52, 7.43, 7.41, 7.38,…
+## $ standard_error              &lt;dbl&gt; 0.0341, 0.0488, 0.0333, 0.0388, 0.0355, 0…
+## $ economy_gdp_per_capita      &lt;dbl&gt; 1.397, 1.302, 1.325, 1.459, 1.326, 1.290,…
+## $ family                      &lt;dbl&gt; 1.350, 1.402, 1.361, 1.331, 1.323, 1.318,…
+## $ health_life_expectancy      &lt;dbl&gt; 0.941, 0.948, 0.875, 0.885, 0.906, 0.889,…
+## $ freedom                     &lt;dbl&gt; 0.666, 0.629, 0.649, 0.670, 0.633, 0.642,…
+## $ trust_government_corruption &lt;dbl&gt; 0.4198, 0.1414, 0.4836, 0.3650, 0.3296, 0…
+## $ generosity                  &lt;dbl&gt; 0.2968, 0.4363, 0.3414, 0.3470, 0.4581, 0…
+## $ dystopia_residual           &lt;dbl&gt; 2.52, 2.70, 2.49, 2.47, 2.45, 2.62, 2.47,…</code></pre>
+<pre class="r"><code>#Look at China&#39;s ranking
+world_happiness_15 %&gt;% filter (country==&quot;China&quot;)</code></pre>
+<p><table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-3">
+<col><col><col><col><col><col><col><col><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">country</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">region</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">happiness_rank</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">happiness_score</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">standard_error</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">economy_gdp_per_capita</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">family</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">health_life_expectancy</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">freedom</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">trust_government_corruption</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">generosity</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">dystopia_residual</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">China</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Eastern Asia</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">84</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">5.14</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.0242</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.89</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.947</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.817</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.517</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.0278</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.0819</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1.86</td></tr>
+</table>
+
+&gt;We can see China ranks at approximately the middle among 158 countries even though it is the second largest economy in the world. So what variable decides happiness? Let’s do a correlation matrix next.</p>
+</div>
+<div id="produce-scatterplot-correlation-matrix-using-ggallyggpairs" class="section level4">
+<h4>produce scatterplot-correlation matrix using GGally::ggpairs()</h4>
+<pre class="r"><code>world_happiness_15 %&gt;% 
+  select(-c(country, region, happiness_rank, standard_error)) %&gt;% 
+  ggpairs()</code></pre>
+<p><img src="/portfolio/project-5_files/figure-html/unnamed-chunk-4-1.png" width="936" style="display: block; margin: auto;" />
+Based on the correlation matrix, I found that happiness score is highly correlated with family, life expenctancy and gdp_per_capita.</p>
+</div>
+<div id="produce-sumamry-statistics-for-happiness-score" class="section level4">
+<h4>produce sumamry statistics for happiness score</h4>
+<pre class="r"><code>world_happiness_15 %&gt;% 
+  select(happiness_score) %&gt;% 
+  skim()</code></pre>
+<table>
+<caption><span id="tab:unnamed-chunk-5">Table 1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">Piped data</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">158</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">numeric</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">happiness_score</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5.38</td>
+<td align="right">1.15</td>
+<td align="right">2.84</td>
+<td align="right">4.53</td>
+<td align="right">5.23</td>
+<td align="right">6.24</td>
+<td align="right">7.59</td>
+<td align="left">▂▇▇▇▆</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="which-region-has-the-lowest-happiness-score" class="section level4">
+<h4>Which region has the lowest happiness score?</h4>
+<pre class="r"><code>by_region &lt;- world_happiness_15 %&gt;% 
+# Group the observations by region 
+  group_by(region) %&gt;% 
+# Calculate the average within the group 
+  summarise(avg_happiness_score=mean(happiness_score))%&gt;%
+# Arrange the average in descending order
+  arrange(desc(avg_happiness_score))</code></pre>
+</div>
+<div id="plot-the-average-happiness-score-by-region" class="section level4">
+<h4>Plot the average happiness score by region</h4>
+<pre class="r"><code>ggplot(by_region, 
+       aes(x = avg_happiness_score, 
+           y = reorder(region,avg_happiness_score)),fill=region)+
+  geom_bar(stat=&quot;identity&quot;)+
+  labs(title = &quot;Which region has the highest happiness score?&quot;, 
+        x=&quot;Happiness_score&quot;,y=&quot;Region&quot;) +
+  theme_economist()</code></pre>
+<p><img src="/portfolio/project-5_files/figure-html/unnamed-chunk-7-1.png" width="936" style="display: block; margin: auto;" />
+&gt;We found Australia and New Zealand region has the highest average happiness_score. Comapring to North Americans, Eastern Asian tends to have lower happpiness_score.</p>
+<p>According to William Tov’s research, the reason why East Asians tend to have lower levels of well-being is because of culture difference. He argues that “culture influences how we seek happiness and regulate our emotions: European Americans typically want to feel peppy emotions like excitement and cheerfulness, while Hong Kong Chinese prefer calmer states like peace and serenity. Even the factors that promote happiness may be different, as self-esteem is more important to our feelings of life satisfaction in the West than in East Asia.”</p>
+</div>
+<div id="are-people-from-the-same-region-eastern-asia-also-feel-unhappy" class="section level4">
+<h4>Are people from the same region (Eastern Asia) also feel unhappy?</h4>
+<p>Create a Graph Comparing Different Countries in East Asia Region</p>
+<pre class="r"><code>world_happiness_east_asia &lt;- world_happiness_15 %&gt;%
+
+  #filter the dataset  
+  filter (region==&quot;Eastern Asia&quot;)
+ 
+  #plot the data
+  ggplot(world_happiness_east_asia, 
+       aes(x = happiness_score, 
+           y = reorder(country,happiness_score)))+
+  geom_bar(stat=&quot;identity&quot;)+
+  labs(title = &quot;Taiwan has the highest happiness score.&quot;, 
+        x=&quot;Happiness_score&quot;,y=&quot;Country&quot;) +
+  theme_economist()</code></pre>
+<p><img src="/portfolio/project-5_files/figure-html/unnamed-chunk-8-1.png" width="936" style="display: block; margin: auto;" />
+From the list, we can see that smaller countries like Taiwan, Japan and Korea tend to have higher happiness score. According to a new analysis published by the Global Wellness, smaller countries tend to feel happier because they have a healthier lifestyle and live longer. For those countries who are large and rapidly developing, their citizens tend to experience high rate of depression, alcohol misuse and other health issues.
+#### Lets see the relationship between happiness score and life expectancy.</p>
+<pre class="r"><code>model1 &lt;- lm(happiness_score ~ 1, data = world_happiness_15)
+model2 &lt;- lm(happiness_score ~ health_life_expectancy, data = world_happiness_15)
+# get model summary
+model2 %&gt;% broom::tidy(conf.int = TRUE)</code></pre>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-9">
+<col><col><col><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">term</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">estimate</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">std.error</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">statistic</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p.value</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">conf.low</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">conf.high</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">(Intercept)</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">3.26</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.173</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">18.8</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">5.16e-42</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.92</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">3.6&nbsp;</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">health_life_expectancy</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3.36</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.256</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">13.1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">5.79e-27</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.85</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3.86</td></tr>
+</table>
+
+<pre class="r"><code>model2 %&gt;% broom::glance()</code></pre>
+<p><table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-9">
+<col><col><col><col><col><col><col><col><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">r.squared</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">adj.r.squared</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">sigma</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">statistic</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p.value</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">df</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">logLik</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">AIC</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">BIC</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">deviance</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">df.residual</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">nobs</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.524</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.521</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.792</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">172</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">5.79e-27</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">-186</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">379</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">388</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">97.9</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">156</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">158</td></tr>
+</table>
+
+We can find a high t stat and the confidence interval doesn’t include zero. Therefore, we can conclude that life expectancy is a variable highly correlated with happiness.</p>
+<pre class="r"><code>ggplot(world_happiness_15,
+       aes(x=health_life_expectancy,y=happiness_score,color=region,size=economy_gdp_per_capita)) +
+  geom_point()+
+# add best fit line
+  geom_smooth(color=&quot;black&quot;)</code></pre>
+<p><img src="/portfolio/project-5_files/figure-html/unnamed-chunk-10-1.png" width="936" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># add labels 
+  labs(title = &quot;Taiwan has the highest happiness score.&quot;, 
+        x=&quot;Life Expectancy&quot;,y=&quot;Happiness Score&quot;) +
+  theme_economist()</code></pre>
+<pre><code>## NULL</code></pre>
+</div>
+</div>
+<div id="reference" class="section level3">
+<h3>Reference</h3>
+<p>&lt;1&gt; <a href="https://greatergood.berkeley.edu/article/item/how_cultural_differences_shape_your_happiness" class="uri">https://greatergood.berkeley.edu/article/item/how_cultural_differences_shape_your_happiness</a></p>
+<p>&lt;2&gt; <a href="https://www.hindustantimes.com/business-news/smaller-countries-are-becoming-the-healthiest-in-global-surveys/story-yFysjpsKN7DMzc1cETpldO.html" class="uri">https://www.hindustantimes.com/business-news/smaller-countries-are-becoming-the-healthiest-in-global-surveys/story-yFysjpsKN7DMzc1cETpldO.html</a></p>
 </div>
 </div>
       </div>
