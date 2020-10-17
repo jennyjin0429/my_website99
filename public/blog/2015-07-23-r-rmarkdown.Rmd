@@ -1,8 +1,9 @@
 ---
 title: "My first Data Analytics Workshop"
 author: "Jenny Jin"
-date: 2015-09-23T21:13:14-05:00
+date: 2020-09-23T21:13:14-05:00
 categories: ["R"]
+image: images/portfolio/item-2.png
 tags: ["R Markdown", "plot", "regression"]
 ---
 
