@@ -42,8 +42,11 @@ ggplot(tidyweather, aes(x=date, y = delta))+
   geom_smooth(color=&quot;red&quot;) +
   theme_bw() +
   labs (title = &quot;Weather Anomalies&quot;)</code></pre>
-<p><img src="/portfolio/project-9_files/figure-html/scatter_plot-1.png" width="672" />
-Is the effect of increasing temperature more pronounced in some months? Use <code>facet_wrap()</code> to produce a seperate scatter plot for each month, again with a smoothing line. Your chart should human-readable labels; that is, each month should be labeled “Jan”, “Feb”, “Mar” (full or abbreviated month names are fine), not <code>1</code>, <code>2</code>, <code>3</code>.</p>
+<p><img src="/portfolio/project-9_files/figure-html/scatter_plot-1.png" width="672" /></p>
+</div>
+<div id="is-the-effect-of-increasing-temperature-more-pronounced-in-some-months" class="section level4">
+<h4>Is the effect of increasing temperature more pronounced in some months?</h4>
+<p>Use <code>facet_wrap()</code> to produce a seperate scatter plot for each month, again with a smoothing line. Your chart should human-readable labels; that is, each month should be labeled “Jan”, “Feb”, “Mar” (full or abbreviated month names are fine), not <code>1</code>, <code>2</code>, <code>3</code>.</p>
 <pre class="r"><code>ggplot(tidyweather, aes(x=date, y = delta))+
   geom_point()+
   geom_smooth(color=&quot;red&quot;) +facet_wrap(~month)</code></pre>

@@ -74,7 +74,9 @@ ggplot(tidyweather, aes(x=date, y = delta))+
   labs (title = "Weather Anomalies")
 
 ```
-Is the effect of increasing temperature more pronounced in some months? Use `facet_wrap()` to produce a seperate scatter plot for each month, again with a smoothing line. Your chart should human-readable labels; that is, each month should be labeled "Jan", "Feb", "Mar" (full or abbreviated month names are fine), not `1`, `2`, `3`. 
+
+#### Is the effect of increasing temperature more pronounced in some months? 
+Use `facet_wrap()` to produce a seperate scatter plot for each month, again with a smoothing line. Your chart should human-readable labels; that is, each month should be labeled "Jan", "Feb", "Mar" (full or abbreviated month names are fine), not `1`, `2`, `3`. 
 ```{r facet_wrap}
 
 ggplot(tidyweather, aes(x=date, y = delta))+
