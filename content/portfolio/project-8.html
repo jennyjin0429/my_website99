@@ -1,0 +1,65 @@
+---
+categories:
+- illustration
+- fun
+author: Jenny Jin
+date: "2020-10-17T12:14:34+06:00"
+description: This is meta description.
+draft: false
+image: images/portfolio/item-3.png
+project_url: https://themefisher.com/
+title: How often do people search for Cupcake?
+---
+
+
+
+<div id="project-requirements" class="section level4">
+<h4>Project Requirements</h4>
+<p>I am a super fan of sweet food, and yes, including cupcake. I have learned that Google has publicized some dataset regarding to search term data tracking by its powerful engine. It shows us how often people are searching for and when. You can explore statistics on search volume for almost any search term since 2004. Enter in any search term, or a handful of search terms, and click the download button to analyze the data outside of the Trends website. If you interested, go on this website :<a href="https://trends.google.com/trends/explore?q=%2Fm%2F03p1r4&amp;date=all" class="uri">https://trends.google.com/trends/explore?q=%2Fm%2F03p1r4&amp;date=all</a></p>
+<p>I select “cupcake” as a term to do my analysis.</p>
+</div>
+<div id="load-libaries" class="section level4">
+<h4>load libaries</h4>
+</div>
+<div id="plot-of-timetrend" class="section level3">
+<h3>Plot of Timetrend</h3>
+<div id="load-and-tidy-the-data." class="section level4">
+<h4>Load and Tidy the data.</h4>
+<pre class="r"><code># load the data
+MultiTimeline  &lt;- read_csv(here::here(&quot;mydata&quot;,&quot;multiTimeline.csv&quot;)) %&gt;%
+               clean_names() 
+
+# tidy the data
+tidytimeline &lt;- MultiTimeline%&gt;%
+ 
+  #rename variables 
+  rename(months= `yue_fen`) %&gt;%
+  rename(search_count=`zhi_bei_dan_gao_quan_qiu`) %&gt;%
+  mutate(date=paste(months, &quot;-01&quot;, sep=&quot;&quot;))
+
+tidytimeline$date &lt;- as.Date(tidytimeline$date)
+
+         
+# look at the variable
+glimpse(tidytimeline)</code></pre>
+<pre><code>## Rows: 202
+## Columns: 3
+## $ months       &lt;chr&gt; &quot;2004-01&quot;, &quot;2004-02&quot;, &quot;2004-03&quot;, &quot;2004-04&quot;, &quot;2004-05&quot;, &quot;…
+## $ search_count &lt;dbl&gt; 6, 6, 6, 6, 6, 5, 5, 6, 7, 10, 6, 6, 7, 8, 9, 8, 7, 7, 8…
+## $ date         &lt;date&gt; 2004-01-01, 2004-02-01, 2004-03-01, 2004-04-01, 2004-05…</code></pre>
+</div>
+<div id="plot-the-data" class="section level4">
+<h4>Plot the data</h4>
+<pre class="r"><code>ggplot(tidytimeline,aes(x=date,y=search_count))+
+ # plot using line plot 
+  geom_line() + 
+  labs(title= &quot;How often do people search for Cupcake?&quot;,
+       x=&quot;date&quot;,
+       y=&quot;search count&quot;)+
+   theme_economist()</code></pre>
+<p><img src="/portfolio/project-8_files/figure-html/unnamed-chunk-2-1.png" width="648" style="display: block; margin: auto;" />
+&gt; I found that during the period between 2010-2015, the search for “cupcake” increases tremendously. Many drama shows trigure the rise of popularity of cupcakes. In Sex and the City, the ladies meet to have cup cakes every two weeks.
+Another show is called “2 Broke Girls”, which was produced for Warner brothers. The show depicts the story for Caroline and Max. The two girls dream of owning a cupcake business and they raise money to first launch Max’s Homemade Cupcakes.The show introduced me to cupcakes and I still remember I was looking for different cupcake shops when I studied in Vancouver.
+And the downfall of cupcake may due to the reason that many new sweet foods are introduced, for example, Macaroons.</p>
+</div>
+</div>
