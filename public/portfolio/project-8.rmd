@@ -7,7 +7,7 @@ date: "2020-10-17T12:14:34+06:00"
 description: This is meta description.
 draft: false
 image: images/portfolio/item-3.png
-project_url: https://themefisher.com/
+project_url: https://jennyjin0429-portfolio.netlify.app/portfolio/project-8/
 title: How often do people search for Cupcake?
 ---
 
@@ -24,16 +24,10 @@ knitr::opts_chunk$set(
   size="small")   # slightly smaller font for code
 options(digits = 3)
 
-# default figure size
-knitr::opts_chunk$set(
-  fig.width=6.75, 
-  fig.height=6.75,
-  fig.align = "center"
-)
 ```
 
 #### load libaries
-```{r load-libraries, include=FALSE}
+```{r load-libraries}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
 library(mosaic)
 library(ggthemes)
@@ -44,9 +38,10 @@ library(janitor)
 library(httr)
 library(readxl)
 library(vroom)
+library(dplyr)
 ```
 
-### Plot of Timetrend
+### Plot of Trend Over Time
 
 #### Load and Tidy the data.
 ```{r}
@@ -80,8 +75,36 @@ ggplot(tidytimeline,aes(x=date,y=search_count))+
    theme_economist()
 
 ```
-> I found that during the period between 2010-2015, the search for "cupcake" increases tremendously. Many drama shows trigure the rise of popularity of cupcakes. In Sex and the City, the ladies meet to have cup cakes every two weeks.
-Another show is called "2 Broke Girls", which was produced for Warner brothers. The show depicts the story for Caroline and Max. The two girls dream of owning a cupcake business and they raise money to first launch Max's Homemade Cupcakes.The show introduced me to cupcakes and I still remember I was looking for different cupcake shops when I studied in Vancouver.
+
+> I found that during the period between 2010-2015, the search for "cupcake" increases tremendously. Many drama shows trigure the rise of popularity of cupcakes. In Sex and the City, the ladies meet to have cup cakes every two weeks.Another show is called "2 Broke Girls", which was produced for Warner brothers. The show depicts the story for Caroline and Max. The two girls dream of owning a cupcake business and they raise money to first launch Max's Homemade Cupcakes.The show introduced me to cupcakes and I still remember I was looking for different cupcake shops when I studied in Vancouver.
 And the downfall of cupcake may due to the reason that many new sweet foods are introduced, for example, Macaroons. 
 
+### Search count grouped by Region
+#### Load and Tidy the data.
+```{r}
+library(mapdata)
+# load the data
+geoMap  <- read_csv(here::here("mydata","geoMap.csv")) %>%
+               clean_names() %>%
+               na.omit()
+
+world_map <- map_data("world")
+glimpse(geoMap)
+```
+#### Merge dataset and Make a choropleth plot
+```{r}
+tidyMap <- geoMap %>%
+  rename(region=`country`)%>%
+  rename(count = `cupcake_01_01_2004_17_10_2020`) 
+# Merge data
+world_map <- map_data("world")
+tidyMap2 <- left_join (tidyMap, world_map, by = "region")
+#create the plot
+ggplot(tidyMap2, aes(long, lat, group = group))+
+  geom_polygon(aes(fill = count ), color = "white")+
+  scale_fill_viridis_c(option = "C") +
+  labs(title="Oceania People Like to Search for Cupcake the Most",x="latitude",y="longitude")
+```
+
+> I found that Oceania people, including Australia and Newzeland tend to search cupcake most often, followed by North American and South American countries. Asian countries seem not search for cupcake that often. That is probably because they don't have a culture of cupcake. 
 

@@ -23,12 +23,6 @@ knitr::opts_chunk$set(
   size="small")   # slightly smaller font for code
 options(digits = 3)
 
-# default figure size
-knitr::opts_chunk$set(
-  fig.width=6.75, 
-  fig.height=6.75,
-  fig.align = "center"
-)
 ```
 load libaries
 ```{r load-libraries, include=FALSE}
@@ -47,8 +41,7 @@ library(vroom)
 Run the code below to load the file:
 ```{r weather_data, cache=TRUE}
 
-weather <- 
-  read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv", 
+weather <- read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv", 
            skip = 1, 
            na = "***")
 

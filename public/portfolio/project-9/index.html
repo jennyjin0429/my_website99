@@ -162,8 +162,7 @@
 <p>If we wanted to study climate change, we can find data on the <em>Combined Land-Surface Air and Sea-Surface Water Temperature Anomalies</em> in the Northern Hemisphere at <a href="https://data.giss.nasa.gov/gistemp">NASA’s Goddard Institute for Space Studies</a>. The <a href="https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.txt">tabular data of temperature anomalies can be found here</a></p>
 <p>load libaries</p>
 <p>Run the code below to load the file:</p>
-<pre class="r"><code>weather &lt;- 
-  read_csv(&quot;https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv&quot;, 
+<pre class="r"><code>weather &lt;- read_csv(&quot;https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv&quot;, 
            skip = 1, 
            na = &quot;***&quot;)</code></pre>
 </div>
@@ -187,12 +186,12 @@ ggplot(tidyweather, aes(x=date, y = delta))+
   geom_smooth(color=&quot;red&quot;) +
   theme_bw() +
   labs (title = &quot;Weather Anomalies&quot;)</code></pre>
-<p><img src="/portfolio/project-9_files/figure-html/scatter_plot-1.png" width="648" style="display: block; margin: auto;" />
+<p><img src="/portfolio/project-9_files/figure-html/scatter_plot-1.png" width="672" />
 Is the effect of increasing temperature more pronounced in some months? Use <code>facet_wrap()</code> to produce a seperate scatter plot for each month, again with a smoothing line. Your chart should human-readable labels; that is, each month should be labeled “Jan”, “Feb”, “Mar” (full or abbreviated month names are fine), not <code>1</code>, <code>2</code>, <code>3</code>.</p>
 <pre class="r"><code>ggplot(tidyweather, aes(x=date, y = delta))+
   geom_point()+
   geom_smooth(color=&quot;red&quot;) +facet_wrap(~month)</code></pre>
-<p><img src="/portfolio/project-9_files/figure-html/facet_wrap-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/portfolio/project-9_files/figure-html/facet_wrap-1.png" width="672" /></p>
 <pre class="r"><code>  theme_bw() +
   labs (title = &quot;Weather Anomalies&quot;)</code></pre>
 <pre><code>## List of 93
@@ -635,7 +634,7 @@ Is the effect of increasing temperature more pronounced in some months? Use <cod
     title = &quot;Density Plot for Monthly Temperature Anomalies&quot;,
     y     = &quot;Density&quot;         #changing y-axis label to sentence case
   )</code></pre>
-<p><img src="/portfolio/project-9_files/figure-html/density_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p><img src="/portfolio/project-9_files/figure-html/density_plot-1.png" width="672" /></p>
 <p>We might be interested in average annual anomalies. We can do this by using <code>group_by()</code> and <code>summarise()</code>, followed by a scatter plot to display the result.</p>
 <pre class="r"><code>#creating yearly averages
 average_annual_anomaly &lt;- tidyweather %&gt;% 
@@ -657,7 +656,7 @@ ggplot(average_annual_anomaly, aes(x=Year, y= annual_average_delta))+
   labs (
     title = &quot;Average Yearly Anomaly&quot;,
     y     = &quot;Average Annual Delta&quot;)                         </code></pre>
-<p><img src="/portfolio/project-9_files/figure-html/averaging-1.png" width="648" style="display: block; margin: auto;" />
+<p><img src="/portfolio/project-9_files/figure-html/averaging-1.png" width="672" />
 ## Confidence Interval for <code>delta</code></p>
 <p><a href="https://earthobservatory.nasa.gov/world-of-change/decadaltemp.php">NASA points out on their website</a> that</p>
 <blockquote>
@@ -696,7 +695,7 @@ percentile_ci</code></pre>
 <pre><code>## # A tibble: 1 x 2
 ##   lower_ci upper_ci
 ##      &lt;dbl&gt;    &lt;dbl&gt;
-## 1    0.918     1.02</code></pre>
+## 1    0.916     1.02</code></pre>
 <blockquote>
 <p>Analysis of Data:
 By looking at the weather annual anomalies graph and the annual anomalies graph faceted by month, we can see a upward trend of delta. Despite there were some cycles and downward trend before 1970s, the trend line is a positive-slope line, surpassing 1 at present. And then by looking at the density plot, we can see the plots are all normal distribution but there is rightward trend of the plot of different time periods, which demonstrates the increasing trend of the mean of delta.Lastly, when we calculate the confidence interval for average annual delta since 2011, we are 95% confident that the average annual delta falls within the range between 0.922 and 1.01. Based on those fildings, we can conclude that the temperature deviation(delta)is greater than 0, thus there is evidence of global warming. And the temperature is also likely keeps increasing in the future.

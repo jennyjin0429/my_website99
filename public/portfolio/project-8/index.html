@@ -145,7 +145,7 @@
               <i class="ti-link"></i>
               <div class="ml-3">
                 <h4>Project Link</h4>
-                <p><a href="https://themefisher.com/">https://themefisher.com/</a></p>
+                <p><a href="https://jennyjin0429-portfolio.netlify.app/portfolio/project-8/">https://jennyjin0429-portfolio.netlify.app/portfolio/project-8/</a></p>
               </div>
             </div>
           </div>
@@ -163,9 +163,20 @@
 </div>
 <div id="load-libaries" class="section level4">
 <h4>load libaries</h4>
+<pre class="r"><code>library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(mosaic)
+library(ggthemes)
+library(lubridate)
+library(here)
+library(skimr)
+library(janitor)
+library(httr)
+library(readxl)
+library(vroom)
+library(dplyr)</code></pre>
 </div>
-<div id="plot-of-timetrend" class="section level3">
-<h3>Plot of Timetrend</h3>
+<div id="plot-of-trend-over-time" class="section level3">
+<h3>Plot of Trend Over Time</h3>
 <div id="load-and-tidy-the-data." class="section level4">
 <h4>Load and Tidy the data.</h4>
 <pre class="r"><code># load the data
@@ -200,10 +211,47 @@ glimpse(tidytimeline)</code></pre>
        x=&quot;date&quot;,
        y=&quot;search count&quot;)+
    theme_economist()</code></pre>
-<p><img src="/portfolio/project-8_files/figure-html/unnamed-chunk-2-1.png" width="648" style="display: block; margin: auto;" />
-&gt; I found that during the period between 2010-2015, the search for “cupcake” increases tremendously. Many drama shows trigure the rise of popularity of cupcakes. In Sex and the City, the ladies meet to have cup cakes every two weeks.
-Another show is called “2 Broke Girls”, which was produced for Warner brothers. The show depicts the story for Caroline and Max. The two girls dream of owning a cupcake business and they raise money to first launch Max’s Homemade Cupcakes.The show introduced me to cupcakes and I still remember I was looking for different cupcake shops when I studied in Vancouver.
+<p><img src="/portfolio/project-8_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<blockquote>
+<p>I found that during the period between 2010-2015, the search for “cupcake” increases tremendously. Many drama shows trigure the rise of popularity of cupcakes. In Sex and the City, the ladies meet to have cup cakes every two weeks.Another show is called “2 Broke Girls”, which was produced for Warner brothers. The show depicts the story for Caroline and Max. The two girls dream of owning a cupcake business and they raise money to first launch Max’s Homemade Cupcakes.The show introduced me to cupcakes and I still remember I was looking for different cupcake shops when I studied in Vancouver.
 And the downfall of cupcake may due to the reason that many new sweet foods are introduced, for example, Macaroons.</p>
+</blockquote>
+</div>
+</div>
+<div id="search-count-grouped-by-region" class="section level3">
+<h3>Search count grouped by Region</h3>
+<div id="load-and-tidy-the-data.-1" class="section level4">
+<h4>Load and Tidy the data.</h4>
+<pre class="r"><code>library(mapdata)
+# load the data
+geoMap  &lt;- read_csv(here::here(&quot;mydata&quot;,&quot;geoMap.csv&quot;)) %&gt;%
+               clean_names() %&gt;%
+               na.omit()
+
+world_map &lt;- map_data(&quot;world&quot;)
+glimpse(geoMap)</code></pre>
+<pre><code>## Rows: 56
+## Columns: 2
+## $ country                       &lt;chr&gt; &quot;Australia&quot;, &quot;New Zealand&quot;, &quot;Philippine…
+## $ cupcake_01_01_2004_17_10_2020 &lt;dbl&gt; 100, 98, 89, 88, 85, 85, 77, 76, 72, 72…</code></pre>
+</div>
+<div id="merge-dataset-and-make-a-choropleth-plot" class="section level4">
+<h4>Merge dataset and Make a choropleth plot</h4>
+<pre class="r"><code>tidyMap &lt;- geoMap %&gt;%
+  rename(region=`country`)%&gt;%
+  rename(count = `cupcake_01_01_2004_17_10_2020`) 
+# Merge data
+world_map &lt;- map_data(&quot;world&quot;)
+tidyMap2 &lt;- left_join (tidyMap, world_map, by = &quot;region&quot;)
+#create the plot
+ggplot(tidyMap2, aes(long, lat, group = group))+
+  geom_polygon(aes(fill = count ), color = &quot;white&quot;)+
+  scale_fill_viridis_c(option = &quot;C&quot;) +
+  labs(title=&quot;Oceania People Like to Search for Cupcake the Most&quot;,x=&quot;latitude&quot;,y=&quot;longitude&quot;)</code></pre>
+<p><img src="/portfolio/project-8_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<blockquote>
+<p>I found that Oceania people, including Australia and Newzeland tend to search cupcake most often, followed by North American and South American countries. Asian countries seem not search for cupcake that often. That is probably because they don’t have a culture of cupcake.</p>
+</blockquote>
 </div>
 </div>
 </div>
